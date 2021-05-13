@@ -21,7 +21,7 @@ describe Hand do
 
     describe "#get_card_matches" do
         it "should return a 2d array whose length is 5 or less when flattened" do
-            expect(hand.get_card_matches.length <= 5).to be true
+            expect(hand.get_card_matches.flatten.length <= 5).to be true
         end
     end
 

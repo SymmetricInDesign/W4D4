@@ -8,7 +8,7 @@ class Towers
         raise NoDiscError if @rods[start_pos].empty?
         if valid_destination?(@rods[start_pos].last, end_pos)
             disc = @rods[start_pos].pop
-            end_pos.push(disc) 
+            @rods[end_pos].push(disc) 
         else
             raise InvalidDestinationError
         end
@@ -16,7 +16,6 @@ class Towers
 
 
     private
-
     def valid_destination?(disc, pos)
         @rods[pos].empty? || disc < @rods[pos].last 
     end

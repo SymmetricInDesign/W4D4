@@ -22,10 +22,12 @@ describe Array do
         end
 
         it "should return all pairs of positions of elements that sum to zero" do
-            
+            expect([1,2,-2,3,-1,4].two_sum).to eq([[0,4], [1,2]])
         end
 
-        it "should return each pair sorted by index ascending"
+        it "should return each pair sorted by index ascending" do
+            expect([1,2,-2,3,-1,4].two_sum).to eq([[0,4], [1,2]])
+        end
 
         it "should return the array of pairs sorted dictionary-wise"
 

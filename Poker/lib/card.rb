@@ -15,9 +15,17 @@ class Card
     13 => "K"
   }.freeze
 
+  CARD_SUITS = [:hearts, :clubs, :spades, :diamonds]
+
+  def self.suits
+    CARD_SUITS
+  end
+
   attr_reader :number, :suit, :card_value
   def initialize(number, suit)
     @number, @suit = number, suit
     @card_value = CARD_VALUES[number]
   end
+
+  
 end

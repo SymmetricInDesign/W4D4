@@ -60,18 +60,28 @@ end
 
 describe "#stock_picker" do
     subject(:stock_prices){
-        1 => 30,
+        {1 => 30,
         2 => 20,
         3 => 25,
         4 => 50,
         5 => 40,
-        6 => 10
+        6 => 10}
     }
 
-    it
+    it "raise error if stock_picker is not a hash" do
+        expect{ stock_picker([1, 30], [2, 20]) }.to raise_error(ArgumentError)
+        expect{ stock_picker(30) }.to raise_error(ArgumentError)
+        expect{ stock_picker("30") }.to raise_error(ArgumentError)
+        expect{ stock_picker(:thirty) }.to raise_error(ArgumentError)
+        expect{ stock_picker(stock_prices) }.not_to raise_error
+    end
 
     it "should return an array of length 2" do
         expect(stock_picker(stock_prices).length).to eq(2)
+    end
+
+    it "should return greatest profit" do
+        expect(stock_picker(stock_prices)).to eq([2, 4])
     end
 end
 

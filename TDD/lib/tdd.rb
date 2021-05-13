@@ -37,3 +37,17 @@ def my_transpose(grid)
     transpose
 end
 
+def stock_picker(hash)
+    raise ArgumentError unless hash.is_a?(Hash)
+
+    arr = [1, 2]
+
+    hash.each do |k1, v1|
+        hash.each do |k2, v2|
+            arr = [k1, k2] if v2 - v1 > hash[arr[1]] - hash[arr[0]] && k1 < k2
+        end
+    end
+
+    arr
+end
+

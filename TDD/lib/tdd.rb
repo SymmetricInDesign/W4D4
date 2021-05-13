@@ -21,4 +21,19 @@ class Array
 
         arr
     end
+
+    
 end
+
+def my_transpose(grid)
+    raise ArgumentError unless grid.is_a?(Array)
+    raise ArgumentError unless grid.all? {|el| el.is_a?(Array)}
+    transpose = grid.dup
+    (0...grid.length).each do |x|
+        (0...grid.length).each do |y|
+            transpose[y][x] = grid[x][y]
+        end
+    end
+    transpose
+end
+

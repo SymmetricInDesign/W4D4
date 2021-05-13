@@ -8,7 +8,7 @@ class Deck
     end
 
     def build_deck
-        (1..13).each do |num|
+        (2..14).each do |num|
             Card.suits.each do |suit|
                 @deck << Card.new(num, suit)
             end
